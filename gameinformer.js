@@ -11,7 +11,7 @@ const puppeteer = require('puppeteer');
   // await browser.close();
 
   await page.goto('https://www.gameinformer.com', { waitUntil: 'networkidle2' });
-  await page.pdf({ path: '/scraps/hn.pdf', format: 'A4' });
+  await page.pdf({ path: 'hn.pdf', format: 'A4' });
 
   await browser.close();
 })();
