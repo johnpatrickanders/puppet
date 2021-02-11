@@ -1,5 +1,7 @@
 /node_modules
 
+/scraps
+
 *.pdf
 *.png
 *.json
