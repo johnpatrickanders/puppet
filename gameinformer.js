@@ -10,8 +10,14 @@ const puppeteer = require('puppeteer');
   // // other actions...
   // await browser.close();
 
-  await page.goto('https://www.gameinformer.com', { waitUntil: 'networkidle2' });
+  // console.info(page);
+  await page.goto('https://www.gameinformer.com/reviews', { waitUntil: 'networkidle2' });
+  await page.waitForSelector('title');
+  page.once('domcontentloaded', () => console.info('✅ DOM is ready'));
   await page.pdf({ path: 'hn.pdf', format: 'A4' });
+  await page.screenshot({ path: 'screenshot.png' });
+  const title = await page.title();
+  console.info(`The title is: ${title}`);
 
   await browser.close();
 })();
