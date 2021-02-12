@@ -14,6 +14,13 @@ const puppeteer = require('puppeteer');
   await page.goto('https://www.gameinformer.com/reviews', { waitUntil: 'networkidle2' });
   await page.waitForSelector('title');
   page.once('domcontentloaded', () => console.info('✅ DOM is ready'));
+  // const content = await page.content();
+  // console.log(content);
+
+  // innerText = await page.evaluate(() => {
+  //   return JSON.parse(document.querySelector("body").innerText);
+  // });
+  // console.log(innerText)
   await page.pdf({ path: 'hn.pdf', format: 'A4' });
   await page.screenshot({ path: 'screenshot.png' });
   const title = await page.title();
