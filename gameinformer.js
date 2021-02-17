@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-(async () => {
+export const gameinformer = async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   // await page.goto('https://www.google.com');
@@ -27,4 +27,4 @@ const puppeteer = require('puppeteer');
   console.info(`The title is: ${title}`);
 
   await browser.close();
-})();
+});
